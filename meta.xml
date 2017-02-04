@@ -1,0 +1,21 @@
+<meta>
+	<info author="Dark_ALEX" type="gamemode" name="RPRL" version="2.7" description="Томский RPRL сервер" />
+	<map src="228.map" dimension="0"/>
+	<min_mta_version client="1.5" server="1.5" />
+   	<script src="mapEditorScriptingExtension_s.lua" type="server"></script>
+    <script src="mapEditorScriptingExtension_c.lua" type="client" validate="false"></script>
+	<script src="VehicleNode.lua" type="server"/>
+	<script src="script.lua" />
+	<export function='BurnChatMSG' type="server" http='true' />
+
+    <sync_map_element_data>true</sync_map_element_data>
+
+	<file src="invobject/newspaper.png" />
+	<file src="invobject/laser.png" />
+	<file src="invobject/chroma.png" />
+	<file src="invobject/crap.png" />
+	<file src="invobject/unknown.png" />
+	
+	<file src="GTA3.mp3" />
+	<script src="client.lua" type="client" validate="true" />
+</meta>
