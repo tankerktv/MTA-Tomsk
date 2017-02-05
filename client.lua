@@ -345,7 +345,7 @@ end
 
 function saveauto()
 	outputChatBox("Запись начата!")
-	setTimer(function(name, area) 
+	setTimer(function() 
 		if(PData["drdist"] > 10) then
 			PData["drdist"] = 0
 			save()
@@ -2951,7 +2951,9 @@ function UpdateBot()
 								local weapon = getPedWeapon(thePlayer)
 								if(weapon) then
 									local range = 2
-									if(weapon > 9) then range = (getWeaponProperty(weapon, "poor", "weapon_range")/2) end
+									if(weapon > 9) then 
+										range = getWeaponProperty(weapon, "poor", "weapon_range")/2
+									end
 									local firespeed = 300
 									if(WeaponTiming[weapon]) then firespeed = WeaponTiming[weapon] end
 									if(range > distance) then
