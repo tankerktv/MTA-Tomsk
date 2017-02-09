@@ -4900,7 +4900,7 @@ function tp(thePlayer, command, h)
 		
 		--local x,y,z,i,d = int[2], int[3], int[4],int[1],0
 
-		local x,y,z,i,d  = 193.8, -1518.9, 11.7, 0, 0 --
+		local x,y,z,i,d  = 2104.9, -1720.9, 12.4, 0, 0 --
 		
 		if(theVehicle) then
 			SetPlayerPosition(theVehicle, x,y,z,i,d)
