@@ -83,9 +83,8 @@ function setCameraOnPlayerJoin()
 	setCameraMatrix(source,1698.9, -1538.9, 13.4, 1694.2, -1529, 13.5)
 	outputChatBox("Нажми "..COLOR["KEY"]["HEX"].."T#FFFFFF чтобы писать в общий чат", source, 255, 255, 255,true)
 	outputChatBox("Нажми "..COLOR["KEY"]["HEX"].."Y#FFFFFF чтобы писать в командный чат", source, 255, 255, 255,true)
-	outputChatBox("Исходный код сервера доступен на официальном сайте "..COLOR["KEY"]["HEX"].."http://109.227.228.4", source, 255, 255, 255,true)
+	outputChatBox("Исходный код сервера "..COLOR["KEY"]["HEX"].."https://github.com/alexaxel705/MTA-Tomsk", source, 255, 255, 255,true)
 	outputChatBox("Группа ВКонтакте "..COLOR["KEY"]["HEX"].."http://vk.com/mtatomsk", source, 255, 255, 255,true)
-	outputChatBox("04.02.2017 Добавлена возможность автоматического перемещения при использовании GPS", source, 255, 255, 255,true)
 	
 end
 addEventHandler("onPlayerJoin", getRootElement(), setCameraOnPlayerJoin)
@@ -4901,7 +4900,7 @@ function tp(thePlayer, command, h)
 		
 		--local x,y,z,i,d = int[2], int[3], int[4],int[1],0
 
-		local x,y,z,i,d  = -2248.1, 323.1, 34.2, 0, 0 --
+		local x,y,z,i,d  = 193.8, -1518.9, 11.7, 0, 0 --
 		
 		if(theVehicle) then
 			SetPlayerPosition(theVehicle, x,y,z,i,d)
@@ -10659,11 +10658,14 @@ CreateDriverBot(-225.9, 2616.2, 62.7, testpath)
 
 
 function FoundNextRandomNode(node, id)
+	local nextnodes = {}
 	if(PathNodes[node][id][6]) then
-		return PathNodes[node][id][6][math.random(#PathNodes[node][id][6])]
-	else
-		return {node, id+1}
+		table.insert(nextnodes, PathNodes[node][id][6][math.random(#PathNodes[node][id][6])])
 	end
+	if(PathNodes[node][id+1]) then
+		table.insert(nextnodes, {node, id+1})
+	end
+	return nextnodes[math.random(#nextnodes)]
 end
 
 

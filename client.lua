@@ -7494,9 +7494,12 @@ function DrawPlayerMessage()
 								for _,k in pairs(arr2[6]) do
 									table.insert(nextmarkers, {k[1], k[2]})
 								end
-							else
+							end
+							
+							if(PData['infopath'][zone][tostring(i+1)]) then
 								table.insert(nextmarkers, {zone, i+1})
 							end
+							
 							for _, arr3 in pairs(nextmarkers) do
 								if(PData['infopath'][arr3[1]]) then
 									local dat = PData['infopath'][arr3[1]][tostring(arr3[2])]
