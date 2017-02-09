@@ -4900,7 +4900,7 @@ function tp(thePlayer, command, h)
 		
 		--local x,y,z,i,d = int[2], int[3], int[4],int[1],0
 
-		local x,y,z,i,d  = 2104.9, -1720.9, 12.4, 0, 0 --
+		local x,y,z,i,d  = -123, -978.9, 25, 0, 0 --
 		
 		if(theVehicle) then
 			SetPlayerPosition(theVehicle, x,y,z,i,d)
@@ -11711,6 +11711,8 @@ function saveserver(thePlayer, x,y,z,rx,ry,rz)
 			PathNodes[zone] = {}
 			tmpi = 1
 		end
+		
+		if(PathNodes[zone][tmpi]) then tmpi = tmpi+100 end
 		
 		if(tmpcity ~= "") then
 			datess = datess..", false, {{\""..zone.."\", "..tmpi.."}}}, \n"
